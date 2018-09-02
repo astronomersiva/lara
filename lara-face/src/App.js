@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Home from './Home';
 import Dashboard from './Dashboard';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -11,7 +14,10 @@ class App extends Component {
 
     return (
       <Router>
-        <Route path="/:project/dashboard" component={DashboardForProject} />
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/:project/dashboard" component={DashboardForProject} />
+        </div>
       </Router>
     );
   }

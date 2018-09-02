@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import Metric from './Metric';
-import './App.css';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       loading: true,
       statistics: {},
