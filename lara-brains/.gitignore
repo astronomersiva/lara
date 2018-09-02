@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+.yarn
+
+# Authentication tokens
+.env
+
+# Misc
+.DS_Store
