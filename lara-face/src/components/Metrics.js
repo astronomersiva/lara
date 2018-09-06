@@ -2,29 +2,7 @@ import React, { Component } from 'react';
 
 import Metric from './Metric';
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true,
-      statistics: {},
-      delta: {},
-      range: {}
-    };
-  }
-
-  async componentDidMount() {
-    let { project } = this.props;
-    let response = await fetch('http://localhost:1511/dashboard', {
-      method: 'GET',
-      headers: { project }
-    });
-
-    let { range, delta, statistics } = await response.json();
-    this.setState({ range, delta, statistics });
-  }
-
+class Metrics extends Component {
   render() {
     let metrics = [
       { key: 'total-stylesheet-size', name: 'File Size' },
@@ -47,16 +25,16 @@ class Dashboard extends Component {
         <Metric
           key={metric.key}
           param={metric.key}
-          value={this.state.statistics[metric.key]}
-          delta={this.state.delta[metric.key]}
-          range={this.state.range[metric.key]}
           name={metric.name}
+          value={this.props.statistics[metric.key]}
+          delta={this.props.delta[metric.key]}
+          range={this.props.range[metric.key]}
         />
       );
     });
 
-    return <div className="dashboard">{metricBlocks}</div>;
+    return <div className="metrics">{metricBlocks}</div>;
   }
 }
 
-export default Dashboard;
+export default Metrics;

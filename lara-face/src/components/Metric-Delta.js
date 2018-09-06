@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class MetricDelta extends Component {
   render() {
     let { delta = 0 } = this.props;

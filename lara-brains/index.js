@@ -99,7 +99,7 @@ lara
     response.end(JSON.stringify({ id: newProject.key }));
   })
   .get('/projects', async(request, response) => {
-    let project = await store.ref(`/projects`).once('value');
+    let project = await store.ref('/projects').once('value');
 
     response.end(JSON.stringify(project));
   })

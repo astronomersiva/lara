@@ -1,11 +1,4 @@
-body {
-  background: #14192f;
-  margin: 50px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-}
-
-.dashboard {
+.metrics {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;

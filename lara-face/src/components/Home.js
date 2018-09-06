@@ -13,7 +13,7 @@ class Home extends Component {
       method: 'GET'
     });
 
-    let projects = await response.json();
+    let projects = await response.json() || {};
     this.setState({ projects });
   }
 
@@ -23,7 +23,7 @@ class Home extends Component {
       let projectName = projects[projectId].name;
       return (
         <div key={projectId}>
-          <Link to={`/${projectId}/dashboard`}>
+          <Link to={`/projects/${projectId}/dashboard`}>
             {projectName}
           </Link>
         </div>

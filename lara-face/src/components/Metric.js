@@ -3,7 +3,7 @@ import Trend from 'react-trend';
 
 import MetricDelta from './Metric-Delta';
 
-import './App.css';
+import '../styles/Metrics.css';
 
 class Metric extends Component {
   render() {

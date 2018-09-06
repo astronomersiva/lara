@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
 import Dashboard from './Dashboard';
 
-import './App.css';
+import '../styles/App.css';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/:project/dashboard" component={DashboardForProject} />
+          <Route path="/projects/:project/dashboard" component={DashboardForProject} />
         </div>
       </Router>
     );
